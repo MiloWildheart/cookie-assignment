@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CookieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/cookies', [CookieController::class, 'calculateBestCookieScore']);
+Route::get('/cookie-calculator', [CookieController::class, 'index']);
+
+Route::get('/', [CookieController::class, 'index']);
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
